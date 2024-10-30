@@ -51,10 +51,11 @@
       <span></span>
    </p>
    <div class="music">
-      <audio src="./assets/mp3/song.mp3" id="my_audio" loop="loop" controls></audio>
+      <audio src="./assets/mp3/song.mp3" id="my_audio" loop="loop" autoplay muted></audio>
       <script>
          window.addEventListener('load', () => {
             const audio = document.getElementById("my_audio");
+            audio.muted = false;  // Unmute after load
             audio.play().catch(error => {
                console.log("Autoplay was prevented. Audio controls are visible to allow manual play.");
             });
