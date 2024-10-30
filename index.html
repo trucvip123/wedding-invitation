@@ -51,7 +51,15 @@
       <span></span>
    </p>
    <div class="music">
-      <audio src="./assets/mp3/song.mp3" id="my_audio" loop="loop" autoplay controls></audio>
+      <audio src="./assets/mp3/song.mp3" id="my_audio" loop="loop" controls></audio>
+      <script>
+         window.addEventListener('load', () => {
+            const audio = document.getElementById("my_audio");
+            audio.play().catch(error => {
+               console.log("Autoplay was prevented. Audio controls are visible to allow manual play.");
+            });
+         });
+      </script>
    </div>
    <p class="happiness">Join us in our happiness!<br></p>
    <!-- partial -->
